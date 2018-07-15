@@ -7,6 +7,9 @@ import {routes} from '../setup/routes'
 import Layout from './common/Layout'
 import Home from './home/Home'
 import About from './home/About'
+
+import AppsView from './home/View'
+
 import ThoughtsList from './thoughts/List'
 import ThoughtsCreate from './thoughts/Create'
 import ThoughtsView from './thoughts/View'
@@ -18,6 +21,9 @@ const App = () => (
       {/* Common */}
       <Route path={routes.home} component={Home} exact/>
       <Route path={routes.about} component={About}/>
+
+      {/* Apps */}
+      <Route path={routes.apps.view(':id')} component={AppsView}/>
 
       {/* Thoughts */}
       <Route path={routes.thoughts.list} component={ThoughtsList} exact/>

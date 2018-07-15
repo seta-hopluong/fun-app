@@ -19,7 +19,7 @@ class List extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrap">
         <h1>Thoughts</h1>
 
         <p>
@@ -28,7 +28,7 @@ class List extends Component {
 
         {/* List thoughts */}
         {
-          this.props.thoughts.isLoading
+          this.props.thoughts && this.props.thoughts.isLoading
             ?
             <Loading message="loading thoughts..."/>
             :

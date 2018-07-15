@@ -3,7 +3,7 @@ import React from 'react'
 
 // Component
 const About = () => (
-  <div>
+  <div className="wrap">   
     <h1>About</h1>
 
     <p>Exsul crederes, tanquam dexter abactor. Cur historia peregrinationes? Nunquam carpseris victrix. A falsis,

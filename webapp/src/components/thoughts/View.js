@@ -18,7 +18,7 @@ class View extends Component {
 
   render() {
     return (
-      <div>
+      <div className="wrap">
         <h1>Thought</h1>
 
         <p>

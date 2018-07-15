@@ -16,6 +16,15 @@ export const routes = {
       return `/thought/${ id }`
     }
   },
+  apps: {
+    // list: '/',
+
+    // create: '/thoughts/create',
+
+    view: (id) => {
+      return `/app/${ id }`
+    }
+  },
 }
 
 export const routesApi = APP_URL_API
