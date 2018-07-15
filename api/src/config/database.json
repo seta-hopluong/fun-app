@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "postgre",
+    "password": "hophop01",
+    "database": "postgres",
+    "host": "postgredb.clewrbsfzzd1.us-east-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "graphql_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
