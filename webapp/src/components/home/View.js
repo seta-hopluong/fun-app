@@ -3,6 +3,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import domtoimage from 'dom-to-image'
 
 // App Imports
 import {routes} from '../../setup/routes'
@@ -18,6 +19,24 @@ class View extends Component {
     this.props.get(this.props.match.params.id)
   }
 
+  renderImage(){
+    var imageContent = document.getElementById('content-image');
+    
+    domtoimage.toPng(imageContent)
+        .then(function (dataUrl) {
+            var img = new Image();
+            
+            img.src = dataUrl;
+            console.log(img, 'dataUrl');
+            var imageExport = document.getElementById('export-image');
+            // imageExport.innerHTML('');
+            imageExport.innerHTML = "<img src='" + dataUrl + "' />";
+        })
+        .catch(function (error) {
+            console.error('oops, something went wrong!', error);
+        });
+  }
+
   render() {
     const { app, apps } = this.props;
 
@@ -26,7 +45,7 @@ class View extends Component {
         <div className="detail-app">
           <div className="left">
              {/* Single apps */}
-              <div className="detail">
+              <div className="detail"  id ="content-image" >
               {
               this.props.app.isLoading
                 ?
@@ -35,7 +54,7 @@ class View extends Component {
                 (
                   this.props.app.item.id > 0
                     ?
-                    <div className="result"> 
+                    <div className="result" id ="export-image"> 
                       <Link to={`/app/process/${app.item.id}`}>
                         <div>
                             <h1>{app.item.name}</h1>
@@ -43,8 +62,8 @@ class View extends Component {
                         <img src="http://hotfunapps.com/soulmates/images/ogshare.jpg" />
                         
                       </Link>
-                      <a className="btn-process" href="">
-                        <b>Click here to know your Results</b>
+                      <a className="btn-process" onClick={()=>this.renderImage()}>
+                        <b >Click here to know your Results</b>
                       </a>
                       <div className="des">
                           <p> Please Login with Facebook to see your Results. We don't share App Result on your Wall without your Permission. </p>
