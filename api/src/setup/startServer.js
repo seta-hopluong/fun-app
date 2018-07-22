@@ -18,7 +18,7 @@ export default function (server) {
         if (error) {
           console.error('ERROR - Unable to start server.')
         } else {
-          console.info(`INFO - Server started on port ${ config.port }.`)
+          console.info(`INFO - Server started on port: ${ config.port }.`)
         }
       })
     })

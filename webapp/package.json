@@ -2,8 +2,10 @@
   "name": "webapp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://seta-fun-app.s3-website-us-east-1.amazonaws.com/",
   "dependencies": {
     "autoprefixer": "7.1.6",
+    "aws-serverless-express": "^3.2.0",
     "axios": "^0.18.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -58,6 +60,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "deploy": "yarn build && aws s3 sync build/ s3://seta-fun-app --delete",
     "test": "node scripts/test.js --env=jsdom"
   },
   "proxy": "http://localhost:3000",

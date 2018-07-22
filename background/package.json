@@ -1,0 +1,26 @@
+{
+  "name": "fullstack-background",
+  "version": "1.0.0",
+  "description": "The app is used to write test code",
+  "main": "index.js",
+  "scripts": {
+    "start-lodash": "nodemon 01-lodash.js",
+    "start-aws": "nodemon 02-aws-sdk.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.275.1",
+    "body-parser": "^1.18.3",
+    "busboy": "^0.2.14",
+    "express": "^4.16.3",
+    "express-formidable": "^1.0.0",
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.10"
+  }
+}
