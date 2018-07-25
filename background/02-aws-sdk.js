@@ -8,8 +8,8 @@ const AWS = require('aws-sdk');
 const Busboy = require('busboy');
 
 const BUCKET_NAME = 'seta-image-test';
-const IAM_USER_KEY = 'AKIAIE5C4S64IZRM3MPA';
-const IAM_USER_SECRET = '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';
+const IAM_USER_KEY = 'xxxx';
+const IAM_USER_SECRET = 'xxxx';
 function uploadToS3(file, res) {
  let s3bucket = new AWS.S3({
    accessKeyId: IAM_USER_KEY,
